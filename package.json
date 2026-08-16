@@ -1,0 +1,27 @@
+{
+  "name": "credentio-local-checker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Privacy-focused local web interface for validating C2PA Content Credentials with Google Credentio",
+  "license": "MIT",
+  "keywords": [
+    "c2pa",
+    "content-credentials",
+    "credentio",
+    "provenance",
+    "media-authenticity"
+  ],
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "start": "node server.mjs",
+    "test": "node --test",
+    "check": "node --check server.mjs && node --check lib/credentio.mjs && node --check scripts/setup.mjs && node --check public/app.js && node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@bazel/bazelisk": "1.28.1"
+  }
+}

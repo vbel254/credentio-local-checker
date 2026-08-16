@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="Validate C2PA Content Credentials locally with Google Credentio.">
+    <title>Credentio Local C2PA Checker</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div class="eyebrow"><span class="local-dot"></span> Running on this computer only</div>
+        <h1>Validate Content Credentials</h1>
+        <p>Select an image, video, audio file, or document. The locally built Credentio C++ validator processes it on this computer—the app does not upload your file to Google or another cloud service.</p>
+      </header>
+
+      <section class="panel upload-panel" aria-labelledby="upload-title">
+        <div class="section-heading">
+          <div>
+            <p class="step">01</p>
+            <h2 id="upload-title">Choose a file</h2>
+          </div>
+          <span class="format-note">up to 2 GiB</span>
+        </div>
+
+        <label class="drop-zone" id="drop-zone">
+          <input id="file-input" type="file" accept="image/*,video/*,audio/*,.pdf,.docx,.pptx,.xlsx">
+          <span class="drop-icon" aria-hidden="true">↥</span>
+          <strong>Drop a file here</strong>
+          <span>or click to browse</span>
+        </label>
+
+        <div class="selection hidden" id="selection">
+          <div class="preview" id="preview" aria-hidden="true"></div>
+          <div class="file-meta">
+            <strong id="file-name"></strong>
+            <span id="file-size"></span>
+          </div>
+          <button class="quiet-button" id="clear-button" type="button" aria-label="Remove file">×</button>
+        </div>
+
+        <button class="primary-button" id="validate-button" type="button" disabled>
+          Validate Content Credentials
+        </button>
+      </section>
+
+      <section class="panel result-panel hidden" id="result-panel" aria-live="polite">
+        <div id="result-content"></div>
+      </section>
+
+      <section class="test-section" aria-labelledby="tests-title">
+        <p class="step">Quick test</p>
+        <h2 id="tests-title">Built-in test files</h2>
+        <p class="muted">Reference C2PA files are downloaded locally when you run the setup command.</p>
+        <div class="test-grid">
+          <button class="test-card" data-sample="good-photo" type="button"><span>✓</span><strong>Valid photo</strong><small>Signature and content are intact</small></button>
+          <button class="test-card" data-sample="bad-photo" type="button"><span>!</span><strong>Tampered photo</strong><small>The content hash does not match</small></button>
+          <button class="test-card" data-sample="plain-photo" type="button"><span>—</span><strong>Unsigned photo</strong><small>No Content Credentials present</small></button>
+          <button class="test-card" data-sample="good-video" type="button"><span>▶</span><strong>Valid MP4</strong><small>Validate a signed video file</small></button>
+        </div>
+      </section>
+
+      <footer>
+        <span>Credentio Local Checker</span>
+        <span>Server: 127.0.0.1</span>
+      </footer>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

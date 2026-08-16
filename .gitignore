@@ -1,0 +1,17 @@
+node_modules/
+.runtime/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+.vscode/
+.idea/
+coverage/
+dist/
+.DS_Store
+npm-debug.log*
+.playwright-cli/
+output/
