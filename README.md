@@ -7,6 +7,22 @@ The app runs on your computer, accepts a file through a local browser interface,
 > [!IMPORTANT]
 > This is an independent experimental project. It is not an official Google or C2PA product and is not endorsed by either organization.
 
+## Screenshots
+
+### Local interface
+
+[![Credentio Local Checker interface](docs/screenshots/interface-overview.png)](docs/screenshots/interface-overview.png)
+
+### Built-in validation scenarios
+
+Each screenshot shows the test asset, the validation outcome, and the details reported by Credentio. Select an image to open it at full resolution.
+
+| Valid JPEG | Tampered JPEG |
+| --- | --- |
+| [![Valid Content Credentials result for good.jpg](docs/screenshots/valid-photo-result.png)](docs/screenshots/valid-photo-result.png) | [![Content hash mismatch result for bad.jpg](docs/screenshots/tampered-photo-result.png)](docs/screenshots/tampered-photo-result.png) |
+| **Unsigned JPEG** | **Valid MP4** |
+| [![No Content Credentials result for plain.jpg](docs/screenshots/unsigned-photo-result.png)](docs/screenshots/unsigned-photo-result.png) | [![Valid Content Credentials result for good.mp4](docs/screenshots/valid-video-result.png)](docs/screenshots/valid-video-result.png) |
+
 ## What it does
 
 - Validates Content Credentials in supported images, video, audio, and documents.
@@ -108,6 +124,7 @@ Do not expose this development server through port forwarding, a reverse proxy, 
 
 ```text
 public/              Browser interface
+docs/screenshots/    README and publication-ready interface captures
 lib/credentio.mjs    Credentio process wrapper and result summarizer
 scripts/setup.mjs    Reproducible download and native build setup
 test/                Unit and integration tests
